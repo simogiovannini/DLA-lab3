@@ -42,6 +42,7 @@ The algorithm was tested varying the number of timesteps using these set of valu
 ![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/76594ca9-2940-43cb-841e-3e74d0031de7)
 
 In this graph the average reward of PPO is represented with the blue line and it's compared to the green line seen before. It's clear how PPO overperforms Reinforce both in time and in reached reward.
+15 minutes of training are enough to reach way better performances.
 
 
 ## Requirements
