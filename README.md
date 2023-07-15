@@ -14,9 +14,20 @@ If `temperature == 1` the agent only selects the action with the highest probabi
 
 The implementation of the Reinforce algorithm is defined in `utils/reinforce.py`. It's a vanilla version with no particular improvement.
 
+
 ## Exercise 3.1: Lunar Lander
+In `3_1.py` we apply Reinforce algorithm on gymnasium's [Lunar Lander environment](https://gymnasium.farama.org/environments/box2d/lunar_lander/).
+
+The algorithm was tested with 3 different values for the `temperature` parameter:
+- `temperature = 0.0`
+- `temperature = 0.8`
+- `temperature = (episode/num_episodes) * 0.9` that increases linearly during learning
+
+
 
 ## Exercise 3.3: Proximal Policy Optimization
+
+
 
 ## Requirements
 You can use the `requirements.txt` file to create the conda environment to run the code in this repository.
