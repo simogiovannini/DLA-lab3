@@ -20,7 +20,10 @@ class PolicyNetwork(nn.Module):
         return action, log_prob_action
 
     def get_action(self, actions, temperature):
-        if np.random.random() < temperature:
-            return torch.argmax(actions).item()
+        if temperature > 0:
+            if np.random.random() < temperature:
+                return torch.argmax(actions).item()
+            else:
+                return np.random.choice(list(range(self.num_actions)))
         else:
             return np.random.choice(list(range(self.num_actions)), p=actions.squeeze(0).detach().cpu().numpy())
