@@ -13,7 +13,7 @@ def reinforce(policy, env, gamma=0.99, lr=1e-4, temperature=0.8, num_episodes=10
         log_probs = []
         rewards = []
         for step in range(max_steps):
-            action, log_prob = policy(state, episode / num_episodes * 0.9)
+            action, log_prob = policy(state, temperature)
             state, reward, terminated, truncated, _ = env.step(action)
             state = torch.tensor(state, dtype=torch.float32, device=device)
             log_probs.append(log_prob)
