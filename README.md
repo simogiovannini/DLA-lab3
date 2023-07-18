@@ -45,5 +45,11 @@ In this graph the average reward of PPO is represented with the blue line and it
 15 minutes of training are enough to reach way better performances.
 
 
+## Extra: the role of Discount Factor
+
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/9f29a980-44d9-488d-80d9-dd8d60c88aa3)
+
+
 ## Requirements
 You can use the `requirements.txt` file to create the conda environment to run the code in this repository.
