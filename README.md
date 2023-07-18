@@ -63,6 +63,17 @@ These data highlight how the choice of discount factor is determinant of converg
 For Lunar Lander, it is noticeable how it is much more relevant to give more weight to actions in the more distant future rather than focusing on the near future,
 
 ## Extra: solve Lunar Lander with Q-Learning
+To get a more comprehensive overview of deep reinforcement learning methods, it was decided to try solving the lunar lander environment using Q Learning.
+
+The implementation of the network and Replay Buffer needed to run the algorithm can be found in `models/q_network.py` and `utils/replay_buffer.py` while the algorithm itself is in `3_4.py`.
+
+In the graph below see the results obtained by training the agent on 5k episodes.
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/ca5b0a23-831f-493e-bff3-4912935a30ec)
+
+Note how the learning process is much faster than that of Reinforce but is still very unstable.
+
+Now that we have a new method of solving the environment we want to test whether the value of the discount factor has the same influence as we found for Reinforce. We then run DQL using the various values tried for Reinforce (`0.9, 0.95, 0.99, 0.999`)
 
 
 
