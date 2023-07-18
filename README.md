@@ -58,7 +58,9 @@ The tested values were:
 
 ![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/eabe99f7-101e-4d71-ba70-cf38c7d59a5e)
 
-In this graph 
+These data highlight how the choice of discount factor is determinant of convergence and not necessarily a higher or lower value causes better behavior on the part of the agent. The conclusion that can be drawn is that the optimal value of the discount factor depends on the environment and is a problem-specific feature.
+
+For Lunar Lander, it is noticeable how it is much more relevant to give more weight to actions in the more distant future rather than focusing on the near future,
 
 ## Extra: solve Lunar Lander with Q-Learning
 
