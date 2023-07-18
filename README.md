@@ -47,8 +47,21 @@ In this graph the average reward of PPO is represented with the blue line and it
 
 ## Extra: the role of Discount Factor
 
+"The discount factor γ determines the tradeoff between immediate and future rewards: small γ values immediate, large is more farsighted".
 
-![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/9f29a980-44d9-488d-80d9-dd8d60c88aa3)
+This graph shows the average rewards obtained by the agent during learning as the discount factor value varies.
+The tested values were:
+- `gamma = 0.9`
+- `gamma = 0.95`
+- `gamma = 0.99`
+- `gamma = 0.999`
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/eabe99f7-101e-4d71-ba70-cf38c7d59a5e)
+
+In this graph 
+
+## Extra: solve Lunar Lander with Q-Learning
+
 
 
 ## Requirements
