@@ -51,10 +51,10 @@ In this graph the average reward of PPO is represented with the blue line and it
 
 This graph shows the average rewards obtained by the agent during learning as the discount factor value varies.
 The tested values were:
-- `gamma = 0.9`
-- `gamma = 0.95`
-- `gamma = 0.99`
-- `gamma = 0.999`
+- `gamma = 0.9` (in purple)
+- `gamma = 0.95` (in green)
+- `gamma = 0.99` (in cyan)
+- `gamma = 0.999` (in orange)
 
 ![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/eabe99f7-101e-4d71-ba70-cf38c7d59a5e)
 
