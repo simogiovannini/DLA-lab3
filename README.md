@@ -73,8 +73,20 @@ In the graph below see the results obtained by training the agent on 5k episodes
 
 Note how the learning process is much faster than that of Reinforce but is still very unstable.
 
-Now that we have a new method of solving the environment we want to test whether the value of the discount factor has the same influence as we found for Reinforce. We then run DQL using the various values tried for Reinforce (`0.9, 0.95, 0.99, 0.999`)
+Now that we have a new method of solving the environment we want to test whether the value of the discount factor has the same influence as we found for Reinforce. We then run DQL using the various values tried for Reinforce (`0.9, 0.95, 0.99, 0.999`).
 
+The lines represent:
+- `gamma = 0.9` (in cyan)
+- `gamma = 0.95` (in pink)
+- `gamma = 0.99` (in gray)
+- `gamma = 0.999` (in orange)
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/ae16ace1-72c3-4260-afd7-01c38bda2344)
+
+What was seen for Reinforce is confirmed i.e., the optimal value for the discount factor seems to be the same:`0.99`
+Even with Q Learning different values lead to nonconvergence and ineffective agent learning.
+
+Thus, the intuition that the identification of the discount factor is a problem spefical to the problem and not dependent on the technique used is confirmed.
 
 
 ## Requirements
