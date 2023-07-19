@@ -47,8 +47,46 @@ In this graph the average reward of PPO is represented with the blue line and it
 
 ## Extra: the role of Discount Factor
 
+"The discount factor γ determines the tradeoff between immediate and future rewards: small γ values immediate, large is more farsighted".
 
-![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/9f29a980-44d9-488d-80d9-dd8d60c88aa3)
+This graph shows the average rewards obtained by the agent during learning as the discount factor value varies.
+The tested values were:
+- `gamma = 0.9` (in purple)
+- `gamma = 0.95` (in green)
+- `gamma = 0.99` (in cyan)
+- `gamma = 0.999` (in orange)
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/eabe99f7-101e-4d71-ba70-cf38c7d59a5e)
+
+These data highlight how the choice of discount factor is determinant of convergence and not necessarily a higher or lower value causes better behavior on the part of the agent. The conclusion that can be drawn is that the optimal value of the discount factor depends on the environment and is a problem-specific feature.
+
+For Lunar Lander, it is noticeable how it is much more relevant to give more weight to actions in the more distant future rather than focusing on the near future,
+
+## Extra: solve Lunar Lander with Q-Learning
+To get a more comprehensive overview of deep reinforcement learning methods, it was decided to try solving the lunar lander environment using Q Learning.
+
+The implementation of the network and Replay Buffer needed to run the algorithm can be found in `models/q_network.py` and `utils/replay_buffer.py` while the algorithm itself is in `3_4.py`.
+
+In the graph below see the results obtained by training the agent on 5k episodes.
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/ca5b0a23-831f-493e-bff3-4912935a30ec)
+
+Note how the learning process is much faster than that of Reinforce but is still very unstable.
+
+Now that we have a new method of solving the environment we want to test whether the value of the discount factor has the same influence as we found for Reinforce. We then run DQL using the various values tried for Reinforce (`0.9, 0.95, 0.99, 0.999`).
+
+The lines represent:
+- `gamma = 0.9` (in cyan)
+- `gamma = 0.95` (in pink)
+- `gamma = 0.99` (in gray)
+- `gamma = 0.999` (in orange)
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/ae16ace1-72c3-4260-afd7-01c38bda2344)
+
+What was seen for Reinforce is confirmed i.e., the optimal value for the discount factor seems to be the same:`0.99`
+Even with Q Learning different values lead to nonconvergence and ineffective agent learning.
+
+Thus, the intuition that the identification of the discount factor is a problem spefical to the problem and not dependent on the technique used is confirmed.
 
 
 ## Requirements
