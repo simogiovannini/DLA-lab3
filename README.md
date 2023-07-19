@@ -88,6 +88,8 @@ Even with Q Learning different values lead to nonconvergence and ineffective age
 
 Thus, the intuition that the identification of the discount factor is a problem spefical to the problem and not dependent on the technique used is confirmed.
 
+### Stabilize Q-Learning
+
 
 ## Requirements
 You can use the `requirements.txt` file to create the conda environment to run the code in this repository.
