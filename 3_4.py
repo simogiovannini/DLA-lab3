@@ -77,6 +77,7 @@ EPS_DECAY = 1000
 TAU = 0.005
 LR = 1e-4
 NUM_EPISODES = 5000
+UPDATE_TARGET_STEP = 1
 
 n_actions = env.action_space.n
 state, info = env.reset()
@@ -119,11 +120,12 @@ for i_episode in range(NUM_EPISODES):
 
         optimize_model()
 
-        target_net_state_dict = target_net.state_dict()
-        policy_net_state_dict = policy_net.state_dict()
-        for key in policy_net_state_dict:
-            target_net_state_dict[key] = policy_net_state_dict[key] * TAU + target_net_state_dict[key] * (1 - TAU)
-        target_net.load_state_dict(target_net_state_dict)
+        if i_episode % UPDATE_TARGET_STEP == 0:
+            target_net_state_dict = target_net.state_dict()
+            policy_net_state_dict = policy_net.state_dict()
+            for key in policy_net_state_dict:
+                target_net_state_dict[key] = policy_net_state_dict[key] * TAU + target_net_state_dict[key] * (1 - TAU)
+            target_net.load_state_dict(target_net_state_dict)
 
         if done:
             total_reward = np.sum(rewards)
