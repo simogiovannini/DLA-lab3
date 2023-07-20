@@ -98,7 +98,12 @@ In order to try to stabilize the learning, the implementation of the method was 
 
 ![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/bc36cb3d-5580-4346-8f4e-90e3eadb82d2)
 
+The values tested for this parameter were:
+- `UPDATE_TARGET_STEP = 1` (in gray)
+- `UPDATE_TARGET_STEP = 5` (in purple)
+- `UPDATE_TARGET_STEP = 10` (in green)
 
+Contrary to what was assumed, the change did not bring the desired result but, on the contrary, worsened the agent's behavior, confirming the goodness of the initial choice.
 
 
 ## Requirements
