@@ -88,6 +88,23 @@ Even with Q Learning different values lead to nonconvergence and ineffective age
 
 Thus, the intuition that the identification of the discount factor is a problem spefical to the problem and not dependent on the technique used is confirmed.
 
+### Stabilize Q-Learning
+
+Despite achieving good results with training it can be seen that the learning process is very unstable and oscillating.
+
+This could be due to the fact that, in the implementation of the algorithm, we update the parameters of the target network at the end of each episode making it a moving target for the policy network.
+
+In order to try to stabilize the learning, the implementation of the method was modified by controlling the updating of the weights so that it was done every certain number of steps, changing the `UPDATE_TARGET_STEP` parameter.
+
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/bc36cb3d-5580-4346-8f4e-90e3eadb82d2)
+
+The values tested for this parameter were:
+- `UPDATE_TARGET_STEP = 1` (in gray)
+- `UPDATE_TARGET_STEP = 5` (in purple)
+- `UPDATE_TARGET_STEP = 10` (in green)
+
+Contrary to what was assumed, the change did not bring the desired result but, on the contrary, worsened the agent's behavior, confirming the goodness of the initial choice.
+
 
 ## Requirements
 You can use the `requirements.txt` file to create the conda environment to run the code in this repository.
