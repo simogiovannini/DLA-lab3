@@ -120,12 +120,15 @@ for i_episode in range(NUM_EPISODES):
 
         optimize_model()
 
-        if i_episode % UPDATE_TARGET_STEP == 0:
+        if i_episode == 1:
             target_net_state_dict = target_net.state_dict()
             policy_net_state_dict = policy_net.state_dict()
             for key in policy_net_state_dict:
                 target_net_state_dict[key] = policy_net_state_dict[key] * TAU + target_net_state_dict[key] * (1 - TAU)
             target_net.load_state_dict(target_net_state_dict)
+        else:
+            if i_episode % UPDATE_TARGET_STEP == 0:
+                target_net.load_state_dict(policy_net.state_dict())
 
         if done:
             total_reward = np.sum(rewards)
