@@ -94,7 +94,10 @@ Despite achieving good results with training it can be seen that the learning pr
 
 This could be due to the fact that, in the implementation of the algorithm, we update the parameters of the target network at the end of each episode making it a moving target for the policy network.
 
+In the implementation used, the update of the target network is done by an exponential average between the parameters of the target and those of the policy network to make it a smooth update.
+
 In order to try to stabilize the learning, the implementation of the method was modified by controlling the updating of the weights so that it was done every certain number of steps, changing the `UPDATE_TARGET_STEP` parameter.
+
 
 ![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/bc36cb3d-5580-4346-8f4e-90e3eadb82d2)
 
@@ -104,6 +107,9 @@ The values tested for this parameter were:
 - `UPDATE_TARGET_STEP = 10` (in green)
 
 Contrary to what was assumed, the change did not bring the desired result but, on the contrary, worsened the agent's behavior, confirming the goodness of the initial choice.
+
+To make a further attempt, we tried to change the way the target network is updated. Each `UPDATE_TARGET_STEP` number of steps, you directly copy all the parameters of the policy network inside those of the target network. The hypothesis is that doing the exponential average intermittently as done in the previous test, being a softer type of update, may create too much difference between the value of the parameters making learning less effective.
+
 
 
 ## Requirements
