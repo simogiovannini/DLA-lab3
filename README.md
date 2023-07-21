@@ -110,7 +110,14 @@ Contrary to what was assumed, the change did not bring the desired result but, o
 
 To make a further attempt, we tried to change the way the target network is updated. Each `UPDATE_TARGET_STEP` number of steps, you directly copy all the parameters of the policy network inside those of the target network. The hypothesis is that doing the exponential average intermittently as done in the previous test, being a softer type of update, may create too much difference between the value of the parameters making learning less effective.
 
+The values tested for this experiment were:
+- `UPDATE_TARGET_STEP = 1` (in blue, with the exponential average implementation)
+- `UPDATE_TARGET_STEP = 5` (in orange)
+- `UPDATE_TARGET_STEP = 10` (in green)
 
+![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/6c7c351f-325e-4565-9ffa-698da6f30064)
+
+We confirm the intuition stated earlier that is, if we want to update the target every certain number of steps we must abandon the exponential average and copy the policy parameters directly into the target. In fact, both values tried make learning effective by producing agents that solve the environment but do not reduce the variability that was the reason these changes were being explored.
 
 ## Requirements
 You can use the `requirements.txt` file to create the conda environment to run the code in this repository.
