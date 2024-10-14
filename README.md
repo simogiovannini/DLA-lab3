@@ -1,4 +1,4 @@
-# DLA-lab3
+# Comparative Study of Reinforcement Learning Algorithms on Lunar Lander
 Deep Learning Applications laboratory on Reinforcement Learning
 
 
